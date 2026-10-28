@@ -54,24 +54,24 @@ const result = await router.generate({
 | `round-robin` | Load balance across providers |
 | `priority` | Enforce org policy (e.g., "always prefer Claude for coding") |
 
-### 🤖 **Agent Orchestration** (`@uaip/orchestrator`)
+### 🤖 **Agent Orchestration** (`@uaip/orchestrator`) — *Coming Soon*
 - DAG-based workflow engine
 - Human-in-the-loop interrupts
 - Sub-agent spawning
 - Pluggable checkpointers (Memory, SQLite, Postgres)
 
-### 🧠 **Context & Memory** (`@uaip/memory`)
+### 🧠 **Context & Memory** (`@uaip/memory`) — *Coming Soon*
 - Cross-session persistence
 - RAG-ready vector storage
 - Conversation summarization
 - Multi-tenant isolation
 
-### 🧩 **Plugin System** (`@uaip/plugins`)
+### 🧩 **Plugin System** (`@uaip/plugins`) — *Coming Soon*
 - Custom providers, tools, memory backends
 - Capability-based sandboxing (Worker Threads)
 - Registry with versioning & signatures
 
-### 💻 **CLI Coding Assistant** (`@uaip/cli`)
+### 💻 **CLI Coding Assistant** (`@uaip/cli`) — *Coming Soon*
 ```bash
 # Vendor-agnostic coding assistant
 uaip chat --model claude-opus-5
@@ -79,11 +79,27 @@ uaip chat --model gpt-4o
 uaip chat --model ollama:llama3.1
 ```
 
-### 🌐 **Web Dashboard** (`@uaip/web`)
+### 🌐 **Web Dashboard** (`@uaip/web`) — *Coming Soon*
 - Team collaboration
 - Cost tracking & budgets
 - Model performance analytics
 - Governance policies
+
+---
+
+## 🗺️ Roadmap
+
+The following packages are **planned but not yet implemented**. They are scaffolded in the monorepo with Nx structure but contain minimal/no functional code.
+
+| Package | Description | Status |
+|---------|-------------|--------|
+| [`@uaip/orchestrator`](packages/orchestrator) | DAG-based multi-agent workflows, human-in-the-loop, sub-agents, pluggable checkpointers | 🚧 **Not Yet Implemented** |
+| [`@uaip/memory`](packages/memory) | Cross-session persistence, RAG, conversation summarization, multi-tenant isolation | 🚧 **Not Yet Implemented** |
+| [`@uaip/plugins`](packages/plugins) | Capability-based plugin system, Worker Thread sandboxing, registry with versioning | 🚧 **Not Yet Implemented** |
+| [`@uaip/cli`](packages/cli) | Vendor-agnostic CLI coding assistant (REPL), mirrors Claude Code patterns | 🚧 **Not Yet Implemented** |
+| [`@uaip/web`](packages/web) | React dashboard for team collaboration, cost tracking, governance, analytics | 🚧 **Not Yet Implemented** |
+
+> **Want to help build these?** See [CONTRIBUTING.md](CONTRIBUTING.md) — we welcome contributors for any of these packages!
 
 ---
 
@@ -148,7 +164,7 @@ const result = await router.generate(
 | **Anthropic** | `ANTHROPIC_API_KEY` | Opus 5, Sonnet 5, Fable 5, Haiku 4.5 | Full streaming, tools, vision |
 | **OpenAI** | `OPENAI_API_KEY` | GPT-4o, GPT-4o-mini, o1-preview, o1-mini | Chat + Responses API |
 | **Google** | `GOOGLE_API_KEY` | Gemini 1.5 Pro, Flash, Flash-8B | New `@google/genai` SDK |
-| **Ollama** | (local) | Llama 3.1, Mistral, CodeLlama, etc. | `ollama pull llama3.1` first |
+| **Ollama** | N/A (runs locally) | Llama 3.1, Mistral, CodeLlama, etc. | `ollama pull llama3.1` first |
 
 > **No API keys?** Use Ollama locally — zero cost, full privacy, runs on your machine.
 
@@ -198,7 +214,7 @@ const result = await router.generate(
 ### Setup
 ```bash
 git clone https://github.com/panusbodee-owen/Ai-Ineed.git
-cd uaip
+cd Ai-Ineed
 npm install
 npm run build       # Build all packages
 npm run test        # Run tests
